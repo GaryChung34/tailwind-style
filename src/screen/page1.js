@@ -38,6 +38,11 @@ function Page1() {
           Click me
         </button>
       </div>
+      <div class="max-w-sm mx-auto">
+        <h1>h1 Heading... ABC 123</h1>
+        <h2>h2 Heading... ABC 123</h2>
+        <h3>h3 Heading... ABC 123</h3>
+      </div>
     </React.Fragment>
 	)
 }
