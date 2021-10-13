@@ -19,26 +19,32 @@ function LuckyDraw() {
 	}
 
 	return (
-		<div className='bg-blue-100 min-h-screen'>
-			<div className='container mx-auto'>
-				<div className='h-1/2 mx-auto'>
-					<h1 className='text-6xl'>Lucky Draw</h1>
-					<br/>
-					{empty && <h1 className='text-red-500'>This is the last person!</h1>}
-					<div className='flex justify-center gap-4'>
-						<div className='bg-gray-50 text-9xl pt-10 text-center w-40 h-60 shadow-xl rounded-xl'>{result[0]}</div>
-						<div className='bg-gray-50 text-9xl pt-10 text-center w-40 h-60 shadow-xl rounded-xl'>{result[1]}</div>
-						<div className='bg-gray-50 text-9xl pt-10 text-center w-40 h-60 shadow-xl rounded-xl'>{result[2]}</div>
-						<div className='bg-gray-50 text-9xl pt-10 text-center w-40 h-60 shadow-xl rounded-xl'>{result[3]}</div>
-						<div className='bg-gray-50 text-9xl pt-10 text-center w-40 h-60 shadow-xl rounded-xl'>{result[4]}</div>
-						<div className='bg-gray-50 text-9xl pt-10 text-center w-40 h-60 shadow-xl rounded-xl'>{result[5]}</div>
+		<div className='bg-fixed h-screen' style={{backgroundImage: 'url(/img/celebrate.jpg)'}}>
+			<div className='container mx-auto h-screen'>
+				<div className='bg-gray-100 pb-3'>
+					<h1 className='text-6xl text-center bg-clip-text text-transparent bg-gradient-to-tl from-yellow-400 to-red-500'>
+						ATAL PD Annual Dinner Lucky Draw
+					</h1>
+				</div>
+				<div className='my-3 bg-gradient-to-tl from-yellow-400 to-red-500 p-5 h-4/5'>
+					<div className='bg-gray-100 p-5 h-full'>
+						{empty && <h1 className='text-red-500'>This is the last person!</h1>}
+						
+						<div className='min-h-5'></div>
+						<button className='py-5 px-10 bg-blue-500 shadow-xl rounded-xl text-white text-4xl mx-auto hover:bg-blue-700'
+							onClick={draw}>
+							Draw
+						</button>
+						<div className='flex justify-center gap-2 relative right-5 top-60'>
+							<div className='bg-gray-50 text-8xl pt-1 text-center w-20 h-28 shadow-lg rounded-lg'>{result[0]}</div>
+							<div className='bg-gray-50 text-8xl pt-1 text-center w-20 h-28 shadow-lg rounded-lg'>{result[1]}</div>
+							<div className='bg-gray-50 text-8xl pt-1 text-center w-20 h-28 shadow-lg rounded-lg'>{result[2]}</div>
+							<div className='bg-gray-50 text-8xl pt-1 text-center w-20 h-28 shadow-lg rounded-lg'>{result[3]}</div>
+							<div className='bg-gray-50 text-8xl pt-1 text-center w-20 h-28 shadow-lg rounded-lg'>{result[4]}</div>
+							<div className='bg-gray-50 text-8xl pt-1 text-center w-20 h-28 shadow-lg rounded-lg'>{result[5]}</div>
+						</div>
+						<img className='w-1/2 mx-auto' src='/img/slot_machine.png' />
 					</div>
-					<br/>
-					<div className='min-h-5'></div>
-					<button className='py-5 px-10 bg-blue-500 shadow-xl rounded-xl text-white text-4xl mx-auto hover:bg-blue-700'
-						onClick={draw}>
-						Draw
-					</button>
 				</div>
 			</div>
 		</div>

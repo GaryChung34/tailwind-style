@@ -9,6 +9,7 @@ module.exports = {
         sky: colors.sky,
         teal: colors.teal,
         emerald: colors.emerald,
+        cyan: colors.cyan,
         blackT: '#1f2937'
       }
     },

@@ -10,7 +10,11 @@ function TestHome() {
 			<NaviBar />
 			<img src='/img/fight_club_soap.png' alt='fight_club_soap.png' 
 				className='w-1/5 float-left relative bottom-28'/>
-			<div className='container mx-auto'>
+			<div className='container mx-auto bg-sky-100 h-screen py-6'>
+				<div className='bg-white h-2/3 mx-6'>
+					<h1 className='relative'>Why not ...</h1>
+					{/*<img src='/img/making_soap.jpg' />*/}
+				</div>
 			</div>
 		</div>
 	)

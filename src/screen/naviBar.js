@@ -81,9 +81,9 @@ function classNames(...classes) {
 
 export default function NaviBar() {
   return (
-    <Popover className="relative">
+    <Popover className="relative border-b-2 border-blackT">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+        <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <a href="#">
               <span className="sr-only">Workflow</span>
@@ -106,15 +106,15 @@ export default function NaviBar() {
                 <>
                   <Popover.Button
                     className={classNames(
-                      open ? 'text-gray-900' : 'text-gray-500',
-                      'group rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'
+                      open ? 'text-yellow-200' : 'text-white',
+                      'group rounded-md inline-flex items-center text-base font-medium hover:text-yellow-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 pl-2'
                     )}
                   >
                     <span>Solutions</span>
                     <ChevronDownIcon
                       className={classNames(
-                        open ? 'text-gray-600' : 'text-gray-400',
-                        'ml-2 h-5 w-5 group-hover:text-gray-500'
+                        open ? 'text-yellow-300' : 'text-white',
+                        'ml-2 h-5 w-5 group-hover:text-yellow-300'
                       )}
                       aria-hidden="true"
                     />
@@ -166,10 +166,10 @@ export default function NaviBar() {
               )}
             </Popover>
 
-            <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-900">
+            <a href="#" className="text-base font-medium text-white hover:text-yellow-300">
               Pricing
             </a>
-            <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-900">
+            <a href="#" className="text-base font-medium text-white hover:text-yellow-300">
               Docs
             </a>
 
@@ -178,15 +178,15 @@ export default function NaviBar() {
                 <>
                   <Popover.Button
                     className={classNames(
-                      open ? 'text-gray-900' : 'text-gray-500',
-                      'group rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'
+                      open ? 'text-yellow-300' : 'text-white',
+                      'group rounded-md inline-flex items-center text-base font-medium hover:text-yellow-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'
                     )}
                   >
                     <span>More</span>
                     <ChevronDownIcon
                       className={classNames(
-                        open ? 'text-gray-600' : 'text-gray-400',
-                        'ml-2 h-5 w-5 group-hover:text-gray-500'
+                        open ? 'text-yellow-300' : 'text-white',
+                        'ml-2 h-5 w-5 group-hover:text-yellow-300'
                       )}
                       aria-hidden="true"
                     />
@@ -246,7 +246,7 @@ export default function NaviBar() {
             </Popover>
           </Popover.Group>
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-            <a href="#" className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
+            <a href="#" className="whitespace-nowrap text-base font-medium text-white hover:text-yellow-300">
               Sign in
             </a>
             <a
