@@ -11,6 +11,9 @@ module.exports = {
         emerald: colors.emerald,
         cyan: colors.cyan,
         blackT: '#1f2937'
+      },
+      width: {
+        'slot_w': '800px'
       }
     },
   },
