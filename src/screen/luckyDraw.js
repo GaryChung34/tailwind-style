@@ -7,30 +7,18 @@ function LuckyDraw() {
 	const [ result, setResult ] = useState('A00000')
 	const [ empty , setEmpty ] = useState(false)
 
-	function draw() {
-		if (myArray.length !== 0) {
-			let x = Math.round((myArray.length - 1)*Math.random())
-			setResult(myArray[x])
-			myArray.splice(x, 1)
-	
-		} else {
-			setEmpty(true)
-		}
-	}
 
-	function draw2() {
+	function draw() {
+		let temp;
+
 		if (drawList.length !== 0) {
 			let x = Math.round((drawList.length - 1) * Math.random())
 
-			console.log(drawList)
+			temp = [...drawList]
+			temp.splice(x, 1)
+
 			setResult(drawList[x])
-			setDrawList(prevList => {
-				let temp = prevList
-				let y = temp.splice(x, 1)
-				console.log(y)
-				return temp
-			})
-			console.log(drawList)
+			setDrawList(temp)
 		} else {
 			setEmpty(true)
 		}
@@ -74,7 +62,7 @@ function LuckyDraw() {
 
 							<div className='mx-auto'>
 								<button className='py-5 px-10 bg-red-500 shadow-md rounded-xl text-white text-4xl hover:bg-red-600 my-24'
-									onClick={draw2}>
+									onClick={draw}>
 									Draw
 								</button>
 							</div>
