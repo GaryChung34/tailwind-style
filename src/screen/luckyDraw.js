@@ -27,20 +27,48 @@ function LuckyDraw() {
 	function reset() {
 		setDrawList(myArray)
 		setEmpty(false)
+		setResult('A00000')
 	}
 
 	return (
 		<div className='bg-fixed h-screen' style={{backgroundImage: 'url(/img/celebrate.jpg)'}}>
 			<div className='container mx-auto h-screen'>
+
+				{/* Title block */}
 				<div className='bg-gray-100 pb-3'>
 					<h1 className='text-6xl text-center bg-clip-text text-transparent bg-gradient-to-b from-yellow-400 to-red-500'>
 						ATAL PD Annual Dinner Lucky Draw
 					</h1>
 				</div>
+
+				{/* gradient frame */}
 				<div className='my-3 bg-gradient-to-tl from-yellow-400 to-red-500 p-5 h-5/6'>
 					<div className='bg-gray-100 p-5 h-full'>
 						{empty && <h1 className='text-red-500'>This is the last person!</h1>}
 
+						{/* photo and name block */}
+						<div className='h-3/5 bg-white flex'>
+							<div className='w-1/3 p-5'>
+								<img src='/img/hulk.jpg' className='object-cover h-full' />
+							</div>
+							
+							<div className='w-1/3 px-5'>
+								<div className='py-5 text-3xl font-semibold'>得獎者: 有病AE</div>
+								<div className='py-5 text-3xl font-semibold'>員工編號: A12235</div>
+								<div className='py-5 text-3xl font-semibold'>所屬地盤: 荃灣313數據中心</div>
+							</div>
+							<div className='w-1/3 p-5'>
+								<div className='py-1 text-2xl font-medium'>1 Prize: </div>
+								<div className='py-1 text-2xl font-medium'>2 Prize: </div>
+								<div className='py-1 text-2xl font-medium'>3 Prize: </div>
+								<div className='py-1 text-2xl font-medium'>4 Prize: </div>
+								<div className='py-1 text-2xl font-medium'>5 Prize: </div>
+								<div className='py-1 text-2xl font-medium'>6 Prize: </div>
+
+							</div>
+						</div>
+
+						{/* slot machine and button block */}
 						<div className='flex'>
 							<div className='mx-auto'>
 								<button className='py-5 px-10 bg-gray-200 shadow-md rounded-xl text-white text-4xl hover:bg-blue-400 my-24' onClick={reset}>
