@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 var myArray = ['A00001', 'A06666', 'A06571', 'A07104', 'A12345'];
 
 function LuckyDraw() {
-	
+	const [ drawList, setDrawList ] = useState(myArray)
 	const [ result, setResult ] = useState('A00000')
 	const [ empty , setEmpty ] = useState(false)
 
@@ -12,10 +12,33 @@ function LuckyDraw() {
 			let x = Math.round((myArray.length - 1)*Math.random())
 			setResult(myArray[x])
 			myArray.splice(x, 1)
-			console.log(myArray)
+	
 		} else {
 			setEmpty(true)
 		}
+	}
+
+	function draw2() {
+		if (drawList.length !== 0) {
+			let x = Math.round((drawList.length - 1) * Math.random())
+
+			console.log(drawList)
+			setResult(drawList[x])
+			setDrawList(prevList => {
+				let temp = prevList
+				let y = temp.splice(x, 1)
+				console.log(y)
+				return temp
+			})
+			console.log(drawList)
+		} else {
+			setEmpty(true)
+		}
+	}
+
+	function reset() {
+		setDrawList(myArray)
+		setEmpty(false)
 	}
 
 	return (
@@ -32,7 +55,7 @@ function LuckyDraw() {
 
 						<div className='flex'>
 							<div className='mx-auto'>
-								<button className='py-5 px-10 bg-gray-200 shadow-md rounded-xl text-white text-4xl hover:bg-blue-400 my-24'>
+								<button className='py-5 px-10 bg-gray-200 shadow-md rounded-xl text-white text-4xl hover:bg-blue-400 my-24' onClick={reset}>
 									Reset
 								</button>
 							</div>
@@ -51,7 +74,7 @@ function LuckyDraw() {
 
 							<div className='mx-auto'>
 								<button className='py-5 px-10 bg-red-500 shadow-md rounded-xl text-white text-4xl hover:bg-red-600 my-24'
-									onClick={draw}>
+									onClick={draw2}>
 									Draw
 								</button>
 							</div>
