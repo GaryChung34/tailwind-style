@@ -36,3 +36,20 @@ code {
 .btn-green {
   @apply text-white bg-green-500 hover:bg-green-700;
 }
+
+.drawingBox {
+  display: grid;
+  grid-template-rows: auto 18rem;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+    'photo'
+    'slot';
+}
+
+.photoBlock {
+  grid-area: photo;
+}
+
+.slotMachine {
+  grid-area: slot;
+}

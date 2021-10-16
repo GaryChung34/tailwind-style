@@ -43,11 +43,11 @@ function LuckyDraw() {
 
 				{/* gradient frame */}
 				<div className='my-3 bg-gradient-to-tl from-yellow-400 to-red-500 p-5 h-5/6'>
-					<div className='bg-gray-100 p-5 h-full'>
-						{empty && <h1 className='text-red-500'>This is the last person!</h1>}
+					<div className='bg-gray-100 p-5 h-full drawingBox'>
+						
 
 						{/* photo and name block */}
-						<div className='h-3/5 bg-white flex'>
+						<div className='flex photoBlock'>
 							<div className='w-1/3 p-5'>
 								<img src='/img/hulk.jpg' className='object-cover h-full' />
 							</div>
@@ -69,7 +69,8 @@ function LuckyDraw() {
 						</div>
 
 						{/* slot machine and button block */}
-						<div className='flex'>
+						<div className='flex relative slotMachine'>
+							{empty && <h2 className='text-red-500 absolute left-1/3 top-0'>This is the last person!</h2>}
 							<div className='mx-auto'>
 								<button className='py-5 px-10 bg-gray-200 shadow-md rounded-xl text-white text-4xl hover:bg-blue-400 my-24' onClick={reset}>
 									Reset
@@ -85,7 +86,7 @@ function LuckyDraw() {
 									<div className='bg-gray-50 text-8xl pt-1 text-center w-16 h-28 shadow-lg rounded-lg'>{result[4]}</div>
 									<div className='bg-gray-50 text-8xl pt-1 text-center w-16 h-28 shadow-lg rounded-lg'>{result[5]}</div>
 								</div>
-								<img className='h-62 mx-auto' src='/img/slot_machine.png' />
+								<img className='h-72 mx-auto' src='/img/slot_machine.png' />
 							</div>
 
 							<div className='mx-auto'>
