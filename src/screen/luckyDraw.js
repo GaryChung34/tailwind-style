@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { employeeDetail } from '../data.js'
 
 var myArray = ['A00101', 'A06866', 'A06571', 'A07104', 'A12345'];
 
@@ -6,26 +7,55 @@ function LuckyDraw() {
 	const [ drawList, setDrawList ] = useState(myArray)
 	const [ result, setResult ] = useState('A00000')
 	const [ empty , setEmpty ] = useState(false)
+	const [ prize1, setPrize1 ] = useState(null)
+	const [ prize2, setPrize2 ] = useState(null)
+	const [ prize3, setPrize3 ] = useState("abc")
+	const [ prize4, setPrize4 ] = useState(null)
+	const [ prize5, setPrize5 ] = useState(null)
+	const [ turn, setTurn ] = useState(0)
+	const [ PDname, setPDname ] = useState('-')
+	const [ PDid, setPDid] = useState('-')
+	const [ PDsite, setPDsite ] = useState('-')
+	const [ PDimg, setPDimg ] = useState('/img/hulk.jpg')
 
+
+	console.log(employeeDetail)
 
 	function draw() {
 		let temp;
+		let x;
+		let luckyMan;
 
 		if (drawList.length !== 0) {
-			let x = Math.round((drawList.length - 1) * Math.random())
+			x = Math.round((drawList.length - 1) * Math.random())
 
 			temp = [...drawList]
 			temp.splice(x, 1)
 
+			luckyMan = employeeDetail.find(employee => employee.id === drawList[x])
+			console.log(luckyMan)
+
+			setPDname(luckyMan.name)
+			setPDid(luckyMan.id)
+			setPDsite(luckyMan.site)
+			setPDimg(luckyMan.photo)
+
 			setResult(drawList[x])
 			setDrawList(temp)
-		} else {
+		} 
+		else {
 			setEmpty(true)
 		}
 	}
 
 	function reset() {
 		setDrawList(myArray)
+
+		setPDname('-')
+		setPDid('-')
+		setPDsite('-')
+		setPDimg('/img/hulk.jpg')
+
 		setEmpty(false)
 		setResult('A00000')
 	}
@@ -50,24 +80,24 @@ function LuckyDraw() {
 						<div className='flex photoBlock'>
 							{/* photo of employee */}
 							<div className='w-1/3 p-5 self-center'>
-								<img src='/img/hulk.jpg' className='object-cover h-sideBox_h w-sideBox_w mx-auto rounded-lg shadow-lg self-center' />
+								<img src={PDimg} className='object-cover h-sideBox_h w-sideBox_w mx-auto rounded-lg shadow-lg self-center' />
 							</div>
 							
 							{/* employee detail */}
 							<div className='w-1/3 self-center pl-8'>
-								<div className='py-5 text-4xl font-semibold'>得獎者: ABC</div>
-								<div className='py-5 text-4xl font-semibold'>員工編號: A12235</div>
-								<div className='py-5 text-4xl font-semibold'>所屬地盤: 荃灣313數據中心</div>
+								<div className='py-5 text-4xl font-semibold'>得獎者: {PDname}</div>
+								<div className='py-5 text-4xl font-semibold'>員工編號: {PDid}</div>
+								<div className='py-5 text-4xl font-semibold'>所屬地盤: {PDsite}</div>
 							</div>
 
 							{/* drawing history */}
 							<div className='w-1/3 p-5 self-center'>
 								<div className='w-sideBox_w h-sideBox_h bg-yellow-100 border-4 border-yellow-700 rounded-lg shadow-lg p-3 mx-auto pl-10'>
-									<div className='py-1 text-2xl font-semibold'>頭獎:&nbsp;&nbsp;&nbsp;&nbsp;-</div>
-									<div className='py-1 text-2xl font-semibold'>二獎:&nbsp;&nbsp;&nbsp;&nbsp;-</div>
-									<div className='py-1 text-2xl font-semibold'>三獎:&nbsp;&nbsp;&nbsp;&nbsp;-</div>
-									<div className='py-1 text-2xl font-semibold'>四獎:&nbsp;&nbsp;&nbsp;&nbsp;-</div>
-									<div className='py-1 text-2xl font-semibold'>五獎:&nbsp;&nbsp;&nbsp;&nbsp;-</div>
+									<div className='py-1 text-2xl font-semibold'>頭獎:&nbsp;&nbsp;&nbsp;&nbsp;{prize1 ? prize1 : '-'}</div>
+									<div className='py-1 text-2xl font-semibold'>二獎:&nbsp;&nbsp;&nbsp;&nbsp;{prize2 ? prize2 : '-'}</div>
+									<div className='py-1 text-2xl font-semibold'>三獎:&nbsp;&nbsp;&nbsp;&nbsp;{prize3 ? prize3 : '-'}</div>
+									<div className='py-1 text-2xl font-semibold'>四獎:&nbsp;&nbsp;&nbsp;&nbsp;{prize4 ? prize4 : '-'}</div>
+									<div className='py-1 text-2xl font-semibold'>五獎:&nbsp;&nbsp;&nbsp;&nbsp;{prize5 ? prize5 : '-'}</div>
 									{/*	<div className='py-1 text-2xl font-semibold'>六獎:&nbsp;&nbsp;&nbsp;&nbsp;-</div>
 									<div className='py-1 text-2xl font-semibold'>七獎:&nbsp;&nbsp;&nbsp;&nbsp;-</div>
 									<div className='py-1 text-2xl font-semibold'>八獎:&nbsp;&nbsp;&nbsp;&nbsp;-</div>*/}
