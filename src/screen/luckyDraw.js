@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-var myArray = ['A00001', 'A06666', 'A06571', 'A07104', 'A12345'];
+var myArray = ['A00101', 'A06866', 'A06571', 'A07104', 'A12345'];
 
 function LuckyDraw() {
 	const [ drawList, setDrawList ] = useState(myArray)
@@ -46,24 +46,32 @@ function LuckyDraw() {
 					<div className='bg-gray-100 p-5 h-full drawingBox'>
 						
 
-						{/* photo and name block */}
+						{/* photo and detail block */}
 						<div className='flex photoBlock'>
-							<div className='w-1/3 p-5'>
-								<img src='/img/hulk.jpg' className='object-cover h-full' />
+							{/* photo of employee */}
+							<div className='w-1/3 p-5 self-center'>
+								<img src='/img/hulk.jpg' className='object-cover h-sideBox_h w-sideBox_w mx-auto rounded-lg shadow-lg self-center' />
 							</div>
 							
-							<div className='w-1/3 px-5'>
-								<div className='py-5 text-3xl font-semibold'>得獎者: 有病AE</div>
-								<div className='py-5 text-3xl font-semibold'>員工編號: A12235</div>
-								<div className='py-5 text-3xl font-semibold'>所屬地盤: 荃灣313數據中心</div>
+							{/* employee detail */}
+							<div className='w-1/3 self-center pl-8'>
+								<div className='py-5 text-4xl font-semibold'>得獎者: ABC</div>
+								<div className='py-5 text-4xl font-semibold'>員工編號: A12235</div>
+								<div className='py-5 text-4xl font-semibold'>所屬地盤: 荃灣313數據中心</div>
 							</div>
-							<div className='w-1/3 p-5'>
-								<div className='py-1 text-2xl font-medium'>1 Prize: </div>
-								<div className='py-1 text-2xl font-medium'>2 Prize: </div>
-								<div className='py-1 text-2xl font-medium'>3 Prize: </div>
-								<div className='py-1 text-2xl font-medium'>4 Prize: </div>
-								<div className='py-1 text-2xl font-medium'>5 Prize: </div>
-								<div className='py-1 text-2xl font-medium'>6 Prize: </div>
+
+							{/* drawing history */}
+							<div className='w-1/3 p-5 self-center'>
+								<div className='w-sideBox_w h-sideBox_h bg-yellow-100 border-4 border-yellow-700 rounded-lg shadow-lg p-3 mx-auto pl-10'>
+									<div className='py-1 text-2xl font-semibold'>頭獎:&nbsp;&nbsp;&nbsp;&nbsp;-</div>
+									<div className='py-1 text-2xl font-semibold'>二獎:&nbsp;&nbsp;&nbsp;&nbsp;-</div>
+									<div className='py-1 text-2xl font-semibold'>三獎:&nbsp;&nbsp;&nbsp;&nbsp;-</div>
+									<div className='py-1 text-2xl font-semibold'>四獎:&nbsp;&nbsp;&nbsp;&nbsp;-</div>
+									<div className='py-1 text-2xl font-semibold'>五獎:&nbsp;&nbsp;&nbsp;&nbsp;-</div>
+									{/*	<div className='py-1 text-2xl font-semibold'>六獎:&nbsp;&nbsp;&nbsp;&nbsp;-</div>
+									<div className='py-1 text-2xl font-semibold'>七獎:&nbsp;&nbsp;&nbsp;&nbsp;-</div>
+									<div className='py-1 text-2xl font-semibold'>八獎:&nbsp;&nbsp;&nbsp;&nbsp;-</div>*/}
+								</div>
 
 							</div>
 						</div>

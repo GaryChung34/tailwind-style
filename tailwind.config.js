@@ -13,9 +13,13 @@ module.exports = {
         blackT: '#1f2937'
       },
       width: {
-        'slot_w': '800px'
+        'slot_w': '800px',
+        'sideBox_w': '350px',
+      },
+      height: {
+        'sideBox_h': '360px'
       }
-    },
+    }
   },
   variants: {
     extend: {},
