@@ -85,7 +85,7 @@ function LuckyDraw() {
 							</div>
 							
 							{/* employee detail */}
-							<div className='w-1/3 self-center pl-8'>
+							<div className='w-1/3 self-center pl-16'>
 								<div className='py-5 text-4xl font-semibold'>得獎者: {PDname}</div>
 								<div className='py-5 text-4xl font-semibold'>員工編號: {PDid}</div>
 								<div className='py-5 text-4xl font-semibold'>所屬地盤: {PDsite}</div>
@@ -93,7 +93,7 @@ function LuckyDraw() {
 
 							{/* drawing history */}
 							<div className='w-1/3 p-5 self-center'>
-								<div className='w-sideBox_w h-sideBox_h bg-yellow-100 border-4 border-yellow-700 rounded-lg shadow-lg p-3 mx-auto pl-10'>
+								<div className='w-sideBox_w h-sideBox_h bg-yellow-100 border-4 border-yellow-700 rounded-lg shadow-lg p-3 mx-auto pl-20'>
 									<div className='py-1 text-2xl font-semibold'>頭獎:&nbsp;&nbsp;&nbsp;&nbsp;{prizeList[4] ? prizeList[4] : '-'}</div>
 									<div className='py-1 text-2xl font-semibold'>二獎:&nbsp;&nbsp;&nbsp;&nbsp;{prizeList[3] ? prizeList[3] : '-'}</div>
 									<div className='py-1 text-2xl font-semibold'>三獎:&nbsp;&nbsp;&nbsp;&nbsp;{prizeList[2] ? prizeList[2] : '-'}</div>
